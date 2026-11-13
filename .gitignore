@@ -1,0 +1,8 @@
+# Local Theme Hospital data is not committed to this repository.
+# Obtain the free demo using scripts/fetch-demo.sh or point CorsixTH
+# at your own legally obtained Theme Hospital installation.
+resources/theme-hospital-demo/
+resources/theme-hospital-full/
+*.zip
+*.7z
+*.rar
