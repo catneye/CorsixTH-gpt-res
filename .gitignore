@@ -6,3 +6,6 @@ resources/theme-hospital-full/
 *.zip
 *.7z
 *.rar
+
+# Locally downloaded/extracted game data (never commit)
+local-data/
