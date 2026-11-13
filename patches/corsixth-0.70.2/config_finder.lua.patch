@@ -1,0 +1,7 @@
+--- a/Lua/config_finder.lua
++++ b/Lua/config_finder.lua
+@@
+ return {
+   config_filename = config_filename,
++  config_path = config_path,
+   config_defaults = new_config_defaults,
