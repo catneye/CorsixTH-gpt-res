@@ -1,0 +1,17 @@
+diff --git a/CorsixTH/Lua/entities/humanoid.lua b/CorsixTH/Lua/entities/humanoid.lua
+--- a/CorsixTH/Lua/entities/humanoid.lua
++++ b/CorsixTH/Lua/entities/humanoid.lua
+@@
+ walk_anims("Handyman",                  1858, 1860, 1866, 1868, 3286, 3288,   nil,   nil, 3518,  3520)
++
++-- Optional custom Handyman idle sprite supplied by CorsixTH-gpt-res.
++-- Keep the original walking, door and task animations unchanged for now.
++do
++  local idle_north, idle_east = TheApp.animation_manager:getAnimations(
++    32, "gpt_handyman_idle")
++  if idle_north and idle_east then
++    walk_animations["Handyman"].idle_north = idle_north
++    walk_animations["Handyman"].idle_east = idle_east
++  end
++end
+ walk_anims("Receptionist",              3668, 3670, 3676, 3678) -- Could do with door animations
