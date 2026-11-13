@@ -1,0 +1,8 @@
+--- a/Lua/app.lua
++++ b/Lua/app.lua
+@@
+     self.anims = self.gfx:loadAnimations("Data", "V")
+     self.animation_manager = AnimationManager(self.anims)
++    local ModLoader = corsixth.require("mod_loader")
++    ModLoader.load()
+     self.walls = self:loadLuaFolder("walls")
