@@ -1,6 +1,7 @@
 --- a/Lua/config_finder.lua
 +++ b/Lua/config_finder.lua
-@@ -1009,6 +1009,7 @@
+@@ -1008,6 +1008,7 @@
+ 
  return {
    config_filename = config_filename,
 +  config_path = config_path,

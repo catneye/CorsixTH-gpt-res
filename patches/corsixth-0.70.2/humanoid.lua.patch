@@ -1,13 +1,19 @@
 --- a/Lua/entities/humanoid.lua
 +++ b/Lua/entities/humanoid.lua
-@@ -27,2 +27,3 @@
+@@ -26,6 +26,7 @@
+ 
  local walk_animations = permanent"humanoid_walk_animations"({})
  local door_animations = permanent"humanoid_door_animations"({})
 +local ModLoader = corsixth.require("mod_loader")
-@@ -166,4 +167,6 @@
+ local die_animations = permanent"humanoid_die_animations"({})
+ local falling_animations = permanent"humanoid_falling_animations"({})
+ local on_ground_animations = permanent"humanoid_on_ground_animations"({})
+@@ -164,6 +165,8 @@
+ walk_anims("VIP",                        266,  268,  274,  276)
+ walk_anims("Inspector",                  266,  268,  274,  276)
  walk_anims("Grim Reaper",                994,  996, 1002, 1004)
- 
- 
-+ModLoader.emit("humanoid.animations", walk_animations)
 +
++ModLoader.emit("humanoid.animations", walk_animations)
+ 
+ 
  local kfp1, kfp2, kfp3, kfp4, kfp5, kfp6, kfp7, kfp8
