@@ -58,7 +58,9 @@ def build():
     )
     frame_block = b"FR" + u16(0) + u16(1) + element
 
-    name = b"gpt_handyman_probe\0"
+    # memory_reader::read_string() stores a one-byte length followed by raw bytes.
+    animation_name = b"gpt_handyman_probe"
+    name = bytes([len(animation_name)]) + animation_name
     missing = 0xFFFFFFFF
     animation_block = (
         b"CA" + u16(32) + u32(1) + name +
