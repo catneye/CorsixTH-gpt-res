@@ -9,3 +9,6 @@ resources/theme-hospital-full/
 
 # Locally downloaded/extracted game data (never commit)
 local-data/
+
+# Generated sprites and CTHG resources (build locally; do not commit).
+/resources/custom-graphics/build/
