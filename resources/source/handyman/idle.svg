@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="80" viewBox="0 0 64 80">
+  <title>Original CorsixTH handyman sprite — idle test pose</title>
+  <defs>
+    <style>
+      .ink{stroke:#263044;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+      .blue{fill:#2876c7}.blue2{fill:#18549a}.skin{fill:#f2b77f}
+      .hair{fill:#49352d}.shoe{fill:#303746}
+    </style>
+  </defs>
+  <!-- Mop, held upright at the handyman's side. -->
+  <path d="M12 18 L17 69" fill="none" stroke="#8d633b" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M8 67 Q15 64 21 68 L23 74 Q17 78 7 75 Z" fill="#d8d2bd" class="ink"/>
+  <path d="M9 70 L21 70 M9 73 L20 73" fill="none" stroke="#a7a08e" stroke-width="1.2"/>
+
+  <!-- Legs and sturdy shoes. -->
+  <path d="M28 54 L27 70 Q27 73 31 73 L37 72 L38 56 Z" fill="#244d80" class="ink"/>
+  <path d="M43 54 L44 70 Q44 73 48 73 L54 72 L53 55 Z" fill="#244d80" class="ink"/>
+  <path d="M26 69 Q31 67 37 70 L38 75 Q37 78 25 77 Q22 75 26 69 Z" class="shoe ink"/>
+  <path d="M43 69 Q48 67 54 70 L58 75 Q57 78 44 77 Q41 75 43 69 Z" class="shoe ink"/>
+
+  <!-- Blue work overalls. -->
+  <path d="M24 35 Q31 32 47 35 L53 56 Q48 61 40 58 L37 47 L35 59 Q27 61 21 56 Z" class="blue ink"/>
+  <path d="M29 35 L31 44 L38 47 L43 35" fill="none" stroke="#9bc9f1" stroke-width="2"/>
+  <path d="M31 42 L42 42" fill="none" stroke="#174b86" stroke-width="1.6"/>
+  <path d="M39 49 L48 49 L49 55 L39 55 Z" fill="#18549a" stroke="#263044" stroke-width="1.4"/>
+  <circle cx="44" cy="52" r="1" fill="#f4d37b"/>
+
+  <!-- Arms: one hand rests on the mop handle. -->
+  <path d="M24 38 Q19 39 17 46 L15 55 Q16 59 20 57 L27 45 Z" class="skin ink"/>
+  <path d="M47 38 Q53 39 54 46 L52 54 Q50 57 47 54 L44 45 Z" class="skin ink"/>
+  <path d="M15 52 Q12 52 12 56 Q13 60 17 59 L20 56 Z" class="skin ink"/>
+  <path d="M48 52 Q46 54 48 57 Q52 59 54 55 L53 52 Z" class="skin ink"/>
+
+  <!-- Neck and oversized friendly head. -->
+  <path d="M32 30 L32 37 Q37 40 41 36 L40 29 Z" class="skin ink"/>
+  <path d="M22 15 Q25 7 36 7 Q49 8 50 20 L48 30 Q44 38 34 38 Q23 36 20 27 Z" class="skin ink"/>
+
+  <!-- Ears. -->
+  <path d="M21 22 Q16 19 17 25 Q18 29 22 28" class="skin ink"/>
+  <path d="M48 21 Q54 19 53 25 Q52 29 48 28" class="skin ink"/>
+
+  <!-- Big nose, eyes and broad smile. -->
+  <path d="M35 21 Q39 18 43 22 Q47 26 42 29 Q37 31 33 27 Q31 24 35 21 Z" fill="#e99b68" class="ink"/>
+  <ellipse cx="29" cy="20" rx="2" ry="2.7" fill="#fff"/>
+  <ellipse cx="44" cy="19" rx="2" ry="2.7" fill="#fff"/>
+  <circle cx="30" cy="20" r="1" fill="#263044"/>
+  <circle cx="44" cy="19" r="1" fill="#263044"/>
+  <path d="M28 30 Q36 36 45 29 Q42 38 34 36 Q29 35 28 30 Z" fill="#fff" class="ink"/>
+  <path d="M30 31 Q37 34 43 30" fill="none" stroke="#9b5144" stroke-width="1.2"/>
+
+  <!-- Unruly, spiky hair. -->
+  <path d="M21 19 Q16 15 20 11 L17 7 Q25 7 26 11 Q27 4 34 3 L35 9 Q41 2 46 7 L44 12 Q52 11 52 17 L47 20 Q39 15 32 16 Q26 16 21 19 Z" class="hair ink"/>
+  <path d="M24 12 L27 15 M35 8 L36 14 M46 11 L43 15" fill="none" stroke="#80604d" stroke-width="1.4"/>
+
+  <!-- Shirt collar and cheerful buttons. -->
+  <path d="M28 35 L34 41 L39 35" fill="#e9f3ff" stroke="#263044" stroke-width="1.6"/>
+  <circle cx="35" cy="45" r="1" fill="#f4d37b"/>
+</svg>
