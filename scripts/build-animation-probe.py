@@ -111,7 +111,7 @@ def build():
     missing = 0xFFFFFFFF
     animation_block = (
         b"CA" + u16(TILE_SIZE) + u32(1) + name
-        + u32(0) + u32(missing) + u32(missing) + u32(missing)
+        + u32(0) + u32(0) + u32(0) + u32(0)
     )
 
     header = (
