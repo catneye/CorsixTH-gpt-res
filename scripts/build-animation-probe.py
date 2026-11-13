@@ -26,10 +26,18 @@ def i16(value):
 def encode_opaque_sprite(width, height, rgb):
     """Encode one run of opaque RGB pixels using the CTHG 32bpp sprite format."""
     count = width * height
-    if not 1 <= count <= 64:
-        raise ValueError("probe sprite must contain between 1 and 64 pixels")
+    if count < 1:
+        raise ValueError("probe sprite must contain at least one pixel")
     r, g, b = rgb
-    return bytes([count - 1]) + bytes([r, g, b]) * count
+    # The low six bits store the literal run length (1..63), not length - 1.
+    # Split larger sprites into multiple opaque runs.
+    encoded = bytearray()
+    while count:
+        run = min(count, 63)
+        encoded.append(run)  # type 00: opaque RGB pixels
+        encoded.extend(bytes([r, g, b]) * run)
+        count -= run
+    return bytes(encoded)
 
 
 def build():
