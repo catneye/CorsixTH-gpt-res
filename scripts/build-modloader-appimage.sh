@@ -47,7 +47,7 @@ trap 'rm -rf "$WORK"' EXIT
 APPDIR="$WORK/AppDir"
 
 echo "Extracting original AppImage (SquashFS offset: $OFFSET)..."
-unsquashfs -no-progress -d "$APPDIR" "$SOURCE" >/dev/null
+unsquashfs -offset "$OFFSET" -no-progress -d "$APPDIR" "$SOURCE" >/dev/null
 
 APP_LUA="$APPDIR/usr/share/corsix-th/Lua"
 [[ -f "$APP_LUA/app.lua" && -f "$APP_LUA/config_finder.lua" && -f "$APP_LUA/entities/humanoid.lua" ]] || {
@@ -73,7 +73,7 @@ install -m 0644 "$PATCH_DIR/mod_hooks.lua" "$APP_LUA/mod_hooks.lua"
 install -m 0644 "$PATCH_DIR/mod_loader.lua" "$APP_LUA/mod_loader.lua"
 
 echo "Building new SquashFS payload..."
-mksquashfs "$APPDIR" "$WORK/payload.squashfs" -noappend -comp xz -all-root -no-progress >/dev/null
+mksquashfs "$APPDIR" "$WORK/payload.squashfs" -noappend -comp zstd -all-root -no-progress >/dev/null
 
 echo "Reusing the original AppImage runtime..."
 head -c "$OFFSET" "$SOURCE" > "$OUTPUT"
