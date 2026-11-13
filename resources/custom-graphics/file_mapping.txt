@@ -1,0 +1,5 @@
+-- CorsixTH executes this file with the custom_graphics table as its environment.
+-- Keep custom CTHG resources listed here; paths are relative to this directory.
+file_mapping = {
+  "build/handyman-probe.cthg",
+}
