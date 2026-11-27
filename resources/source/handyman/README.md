@@ -10,6 +10,8 @@ All cells are original SVG vector artwork based on the Handyman character design
 - `walk.svg` — 2 rows × 6 frames: front-facing row first, east-facing row second.
 - `walk-back.svg` — 1 row × 6 frames: simplified back-facing walk cycle.
 - `sweep.svg` — 1 row × 6 frames: sweeping cycle.
+- `repair-cardio.svg` — 1 row × 6 frames: repeated repair cycle for the cardio machine.
+- `repair-cardio-finish.svg` — 1 row × 4 frames: repair completion/retracting-tools cycle.
 - `door.svg` — 1 row × 8 frames: four entering frames followed by four leaving frames.
 - `swing-door.svg` — 1 row × 8 frames: four entering frames followed by four leaving frames.
 

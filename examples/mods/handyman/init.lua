@@ -20,6 +20,23 @@ return function(api)
     api.log("custom idle east assigned: " .. tostring(east))
   end)
 
+  api.hooks.register("humanoid.use_object_animation", function(anim_table, object, humanoid, phase)
+    if object.object_type.id ~= "cardio" or humanoid.humanoid_class ~= "Handyman" then
+      return
+    end
+
+    local anims = TheApp.animation_manager.anims
+    local animation_name = phase == 0 and "gpt_handyman_repair_cardio"
+      or phase == 1 and "gpt_handyman_repair_cardio_finish"
+
+    if animation_name then
+      local animation = anims:getAnimations(32, animation_name)
+      anim_table.Handyman = animation
+      api.log("custom cardio repair phase " .. tostring(phase) ..
+        " assigned: " .. tostring(animation))
+    end
+  end)
+
   api.hooks.register("humanoid.sweep_floor_animations", function(animation_numbers)
     api.log("sweep animation 1: " .. tostring(animation_numbers[1]))
     api.log("sweep animation 2: " .. tostring(animation_numbers[2]))
