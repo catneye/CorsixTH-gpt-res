@@ -2,7 +2,7 @@
 """Build all original Handyman SVG sheets into one CorsixTH CTHG resource.
 
 Run from the repository root:
-    python3 scripts/build-handyman-animations.py
+    python3 resources/build-handyman-animations.py
 Requires CairoSVG and Pillow (already listed in requirements.txt).
 """
 from pathlib import Path
@@ -115,7 +115,7 @@ def make_frame(sprite_index):
 
 
 def make_animation(name, frame_indices, directions=("all",)):
-    """Create one CA block. Each direction points at the same cycle by default."""
+    """Create one CA block with the cycle assigned to selected directions."""
     if not frame_indices:
         raise ValueError(f"Animation {name} has no frames")
     first = frame_indices[0]
@@ -140,9 +140,9 @@ def make_animation(name, frame_indices, directions=("all",)):
 def build():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # The source sheets are ordered row-major, as documented in their README.
     source_specs = [
-        ("idle", "idle.svg", 1),
+        ("idle-north", "idle.svg", 1),
+        ("idle-east", "idle-east.svg", 1),
         ("walk", "walk.svg", 12),
         ("sweep", "sweep.svg", 6),
         ("door", "door.svg", 8),
@@ -151,7 +151,6 @@ def build():
 
     sprite_images = []
     source_ranges = {}
-    preview = Image.new("RGBA", (CELL_W * 7, CELL_H * 5), (0, 0, 0, 0))
 
     for name, filename, expected_count in source_specs:
         frames = cells(SOURCE_DIR / filename)
@@ -164,25 +163,30 @@ def build():
         source_ranges[name] = list(range(start, start + len(frames)))
 
     # Create one contact sheet to inspect all source frames after rasterization.
+    columns = 7
+    rows = (len(sprite_images) + columns - 1) // columns
+    preview = Image.new("RGBA", (CELL_W * columns, CELL_H * rows), (0, 0, 0, 0))
     for index, frame in enumerate(sprite_images):
-        x = (index % 7) * CELL_W
-        y = (index // 7) * CELL_H
+        x = (index % columns) * CELL_W
+        y = (index // columns) * CELL_H
         preview.alpha_composite(frame, (x, y))
     preview.save(OUTPUT_DIR / "handyman-all-frames.png")
 
-    # Global frame indices and named animation cycles.
     animations = []
-    frame_cursor = 0
-
-    idle = source_ranges["idle"]
-    animations.append(("gpt_handyman_idle", idle, ("all",)))
+    animations.append((
+        "gpt_handyman_idle_north", source_ranges["idle-north"], ("north",)
+    ))
+    animations.append((
+        "gpt_handyman_idle_east", source_ranges["idle-east"], ("east",)
+    ))
 
     walk = source_ranges["walk"]
     animations.append(("gpt_handyman_walk_north", walk[:6], ("north",)))
     animations.append(("gpt_handyman_walk_east", walk[6:12], ("east",)))
 
-    sweep = source_ranges["sweep"]
-    animations.append(("gpt_handyman_sweep", sweep, ("north-east",)))
+    animations.append((
+        "gpt_handyman_sweep", source_ranges["sweep"], ("north-east",)
+    ))
 
     door = source_ranges["door"]
     animations.append(("gpt_handyman_door_enter", door[:4], ("all",)))
@@ -192,9 +196,6 @@ def build():
     animations.append(("gpt_handyman_swing_enter", swing[:4], ("all",)))
     animations.append(("gpt_handyman_swing_leave", swing[4:], ("all",)))
 
-    # The CA block points at the first global FR frame of each cycle.
-    # For directional walk, publish the north/east cycles as separate names;
-    # the mod selects those two IDs explicitly.
     sprite_blocks = []
     sprite_data_total = 0
     for image in sprite_images:
@@ -205,15 +206,16 @@ def build():
         )
 
     frame_blocks = [make_frame(index) for index in range(len(sprite_images))]
-    animation_blocks = []
-    for name, indices, dirs in animations:
-        animation_blocks.append(make_animation(name, indices, dirs))
+    animation_blocks = [
+        make_animation(name, indices, dirs)
+        for name, indices, dirs in animations
+    ]
 
     header = (
         b"CTHG" + bytes((1, 2))
         + u32(len(animation_blocks))
         + u32(len(frame_blocks))
-        + u32(len(frame_blocks))  # one element per frame
+        + u32(len(frame_blocks))
         + u32(len(sprite_blocks))
         + u32(sprite_data_total)
     )
