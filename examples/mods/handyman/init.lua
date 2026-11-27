@@ -26,6 +26,9 @@ return function(api)
     end
 
     local object_id = object.object_type.id
+    api.log("use_object hook: object=" .. tostring(object_id) ..
+      ", phase=" .. tostring(phase))
+
     local animation_name
     local marker
     local label
