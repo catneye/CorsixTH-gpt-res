@@ -21,23 +21,37 @@ return function(api)
   end)
 
   api.hooks.register("humanoid.use_object_animation", function(anim_table, object, humanoid, phase)
-    if object.object_type.id ~= "cardio" or humanoid.humanoid_class ~= "Handyman" then
+    if humanoid.humanoid_class ~= "Handyman" then
       return
     end
 
-    local anims = TheApp.animation_manager.anims
-    local animation_name = phase == 0 and "gpt_handyman_repair_cardio"
-      or phase == 1 and "gpt_handyman_repair_cardio_finish"
+    local object_id = object.object_type.id
+    local animation_name
+    local marker
+    local label
+
+    if object_id == "cardio" then
+      animation_name = phase == 0 and "gpt_handyman_repair_cardio"
+        or phase == 1 and "gpt_handyman_repair_cardio_finish"
+      marker = phase == 0 and {-21, -13, "px"} or {-20, -13, "px"}
+      label = "cardio"
+    elseif object_id == "ultrascanner" and phase == 0 then
+      animation_name = "gpt_handyman_repair_ultrascanner"
+      marker = {60, -4, "px"}
+      label = "ultrascanner"
+    else
+      return
+    end
 
     if animation_name then
-      local _, animation = anims:getAnimations(32, animation_name)
-      anim_table.Handyman = {animation, object_visible = true}
-
-      local marker = phase == 0 and {-21, -13, "px"}
-        or {-20, -13, "px"}
+      local _, animation = TheApp.animation_manager.anims:getAnimations(32, animation_name)
+      anim_table.Handyman = {
+        animation,
+        object_visible = true,
+        mirror = true,
+      }
       TheApp.animation_manager:setStaffMarker(animation, marker)
-
-      api.log("custom cardio repair phase " .. tostring(phase) ..
+      api.log("custom " .. label .. " repair phase " .. tostring(phase) ..
         " assigned: " .. tostring(animation))
     end
   end)
