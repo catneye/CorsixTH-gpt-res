@@ -30,8 +30,13 @@ return function(api)
       or phase == 1 and "gpt_handyman_repair_cardio_finish"
 
     if animation_name then
-      local animation = anims:getAnimations(32, animation_name)
-      anim_table.Handyman = animation
+      local _, animation = anims:getAnimations(32, animation_name)
+      anim_table.Handyman = {animation, object_visible = true}
+
+      local marker = phase == 0 and {-21, -13, "px"}
+        or {-20, -13, "px"}
+      TheApp.animation_manager:setStaffMarker(animation, marker)
+
       api.log("custom cardio repair phase " .. tostring(phase) ..
         " assigned: " .. tostring(animation))
     end
