@@ -147,8 +147,8 @@ def build():
         ("walk", "walk.svg", 12),
         ("walk-back", "walk-back.svg", 6),
         ("sweep", "sweep.svg", 6),
-    ("repair-cardio", "repair-cardio.svg", 6),
-    ("repair-cardio-finish", "repair-cardio-finish.svg", 4),
+        ("repair-cardio", "repair-cardio.svg", 6),
+        ("repair-cardio-finish", "repair-cardio-finish.svg", 4),
         ("door", "door.svg", 8),
         ("swing-door", "swing-door.svg", 8),
     ]
@@ -193,10 +193,10 @@ def build():
         "gpt_handyman_sweep", source_ranges["sweep"], ("north-east",)
     ))
     animations.append((
-        "gpt_handyman_repair_cardio", source_ranges["repair-cardio"], ("all",)
+        "gpt_handyman_repair_cardio", source_ranges["repair-cardio"], ("east",)
     ))
     animations.append((
-        "gpt_handyman_repair_cardio_finish", source_ranges["repair-cardio-finish"], ("all",)
+        "gpt_handyman_repair_cardio_finish", source_ranges["repair-cardio-finish"], ("east",)
     ))
 
     door = source_ranges["door"]
