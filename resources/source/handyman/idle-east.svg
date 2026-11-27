@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="80" viewBox="0 0 64 80">
+  <title>Handyman idle — east-facing profile</title>
+  <desc>Single 64 by 80 pixel idle frame, facing right. Matches the existing Handyman palette and outline style.</desc>
+  <defs>
+    <style>
+      .ink{stroke:#263044;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+      .blue{fill:#2876c7}.blue2{fill:#18549a}.skin{fill:#f2b77f}
+      .hair{fill:#49352d}.shoe{fill:#303746}
+    </style>
+  </defs>
+
+  <!-- Mop held at the rear/left side. -->
+  <path d="M10 17 L14 68" fill="none" stroke="#8d633b" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M7 67 Q13 64 19 68 L21 74 Q15 78 6 75 Z" fill="#d8d2bd" class="ink"/>
+  <path d="M8 70 L19 70 M8 73 L19 73" fill="none" stroke="#a7a08e" stroke-width="1.2"/>
+
+  <!-- Legs and shoes, shown in profile. -->
+  <path d="M27 53 L26 69 Q26 73 30 73 L37 72 L38 55 Z" fill="#244d80" class="ink"/>
+  <path d="M39 54 L42 69 Q43 72 47 72 L54 70 L49 53 Z" fill="#244d80" class="ink"/>
+  <path d="M25 69 Q31 67 37 70 L39 75 Q37 78 25 77 Q22 75 25 69 Z" class="shoe ink"/>
+  <path d="M41 68 Q47 67 53 69 L59 73 Q59 77 46 77 Q42 76 41 68 Z" class="shoe ink"/>
+
+  <!-- Work overalls, side silhouette. -->
+  <path d="M25 35 Q34 32 43 35 L49 55 Q45 60 38 58 L35 47 L32 59 Q26 60 21 56 Z" class="blue ink"/>
+  <path d="M30 35 L32 44 L38 47 L42 36" fill="none" stroke="#9bc9f1" stroke-width="2"/>
+  <path d="M37 49 L45 49 L47 55 L38 55 Z" fill="#18549a" stroke="#263044" stroke-width="1.4"/>
+  <circle cx="43" cy="52" r="1" fill="#f4d37b"/>
+
+  <!-- Arms: near arm rests naturally beside the body. -->
+  <path d="M25 38 Q20 41 19 48 L19 55 Q21 59 24 56 L29 45 Z" class="skin ink"/>
+  <path d="M41 38 Q47 39 49 46 L49 53 Q47 57 44 54 L39 45 Z" class="skin ink"/>
+  <path d="M18 52 Q15 53 16 57 Q18 60 22 57 L23 54 Z" class="skin ink"/>
+  <path d="M45 51 Q43 54 46 57 Q50 58 51 54 L49 51 Z" class="skin ink"/>
+
+  <!-- Neck and side-profile head facing east/right. -->
+  <path d="M31 29 L32 38 Q37 40 41 36 L39 28 Z" class="skin ink"/>
+  <path d="M25 13 Q31 6 41 9 Q50 12 51 21 L55 25 Q54 29 50 30 Q47 37 39 38 Q29 37 25 29 Q22 21 25 13 Z" class="skin ink"/>
+
+  <!-- Visible ear and profile features. -->
+  <path d="M27 21 Q21 18 21 24 Q22 29 28 28" class="skin ink"/>
+  <path d="M47 20 Q51 18 53 21" fill="none" stroke="#d98f63" stroke-width="1.3"/>
+  <path d="M50 23 Q56 22 58 26 Q56 29 51 29 L47 27" fill="#e99b68" class="ink"/>
+  <circle cx="47" cy="19" r="1.4" fill="#263044"/>
+  <path d="M43 30 Q48 33 52 29" fill="none" stroke="#9b5144" stroke-width="1.5"/>
+
+  <!-- Spiky brown hair, shaped for the side view. -->
+  <path d="M23 20 Q19 15 23 11 L20 7 Q28 6 30 11 Q32 3 39 4 L40 9 Q47 4 51 10 L48 14 Q54 15 53 21 L49 23 Q43 17 36 17 Q29 17 23 22 Z" class="hair ink"/>
+  <path d="M27 12 L31 16 M39 8 L40 14 M49 12 L46 16" fill="none" stroke="#80604d" stroke-width="1.4"/>
+
+  <!-- Shirt collar and button. -->
+  <path d="M28 35 L34 41 L39 36" fill="#e9f3ff" stroke="#263044" stroke-width="1.6"/>
+  <circle cx="36" cy="45" r="1" fill="#f4d37b"/>
+</svg>
