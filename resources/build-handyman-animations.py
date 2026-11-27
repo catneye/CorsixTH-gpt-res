@@ -141,9 +141,11 @@ def build():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     source_specs = [
-        ("idle-north", "idle.svg", 1),
+        ("idle-front", "idle.svg", 1),
+        ("idle-back", "idle-back.svg", 1),
         ("idle-east", "idle-east.svg", 1),
         ("walk", "walk.svg", 12),
+        ("walk-back", "walk-back.svg", 6),
         ("sweep", "sweep.svg", 6),
         ("door", "door.svg", 8),
         ("swing-door", "swing-door.svg", 8),
@@ -174,14 +176,15 @@ def build():
 
     animations = []
     animations.append((
-        "gpt_handyman_idle_north", source_ranges["idle-north"], ("north",)
+        "gpt_handyman_idle_north", source_ranges["idle-back"], ("north",)
     ))
     animations.append((
         "gpt_handyman_idle_east", source_ranges["idle-east"], ("east",)
     ))
 
     walk = source_ranges["walk"]
-    animations.append(("gpt_handyman_walk_north", walk[:6], ("north",)))
+    walk_back = source_ranges["walk-back"]
+    animations.append(("gpt_handyman_walk_north", walk_back, ("north",)))
     animations.append(("gpt_handyman_walk_east", walk[6:12], ("east",)))
 
     animations.append((

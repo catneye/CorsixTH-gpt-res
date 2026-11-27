@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="80" viewBox="0 0 64 80"><title>Handyman idle — simplified back view</title><defs><style>.ink{stroke:#263044;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}.blue{fill:#2876c7}.skin{fill:#f2b77f}.hair{fill:#49352d}.shoe{fill:#303746}</style></defs><g>
+<path d="M12 17 L14 68" fill="none" stroke="#8d633b" stroke-width="3.2" stroke-linecap="round"/><path d="M7 67 Q13 64 19 68 L21 74 Q15 78 6 75Z" fill="#d8d2bd" class="ink"/>
+<path d="M29 54 L27 70 L34 72 L38 55Z" fill="#244d80" class="ink"/><path d="M41 54 L43 70 L50 72 L52 55Z" fill="#244d80" class="ink"/>
+<path d="M25 69 Q31 67 37 70 L38 76 Q31 79 24 76Z" class="shoe ink"/><path d="M41 69 Q47 67 53 70 L58 76 Q50 79 43 76Z" class="shoe ink"/>
+<path d="M24 35 Q32 32 47 35 L53 56 Q47 60 40 58 L37 47 L35 59 Q27 61 21 56Z" class="blue ink"/><path d="M29 36 L31 44 L38 47 L43 36" fill="none" stroke="#18549a" stroke-width="2.2"/><path d="M27 40 L37 43 L47 40" fill="none" stroke="#9bc9f1" stroke-width="1.5"/>
+<path d="M24 37 Q19 40 18 49 L18 56 Q20 60 24 57 L29 44Z" class="skin ink"/><path d="M45 37 Q51 40 50 49 L50 56 Q48 60 44 57 L40 44Z" class="skin ink"/>
+<path d="M32 29 L32 38 L40 38 L40 29Z" class="skin ink"/>
+<path d="M22 15 Q25 7 36 7 Q49 8 50 20 L48 30 Q44 38 34 38 Q23 36 20 27Z" class="skin ink"/>
+<path d="M20 20 Q16 10 25 7 Q27 2 34 4 Q40 0 46 6 Q54 8 52 18 L48 22 Q44 16 35 16 Q27 16 22 22Z" class="hair ink"/><path d="M25 13 Q34 17 45 13" fill="none" stroke="#80604d" stroke-width="1.4"/>
+</g></svg>
