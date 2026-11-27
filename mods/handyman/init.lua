@@ -82,6 +82,16 @@ api.hooks.register("humanoid.use_object_animation", function(anim_table, object,
     }
     TheApp.animation_manager:setStaffMarker(repair, {28, -20, "px"})
     api.log("custom slicer repair assigned: " .. tostring(repair))
+
+  elseif object_id == "hair_restorer" and phase == 0 then
+    local _, repair = anims:getAnimations(32, "gpt_handyman_repair_hair_restorer")
+    anim_table.Handyman = {
+      repair,
+      object_visible = true,
+      mirror = true,
+    }
+    TheApp.animation_manager:setStaffMarker(repair, {61, -36, "px"})
+    api.log("custom hair restorer repair assigned: " .. tostring(repair))
   end
 end)
 
