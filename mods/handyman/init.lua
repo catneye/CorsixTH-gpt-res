@@ -46,6 +46,9 @@ api.hooks.register("humanoid.use_object_animation", function(anim_table, object,
   end
 
   local object_id = object.object_type.id
+  api.log("use_object hook: object=" .. tostring(object_id) ..
+    ", phase=" .. tostring(phase))
+
   local anims = TheApp.animation_manager.anims
 
   if object_id == "cardio" then
