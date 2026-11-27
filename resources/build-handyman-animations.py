@@ -205,6 +205,9 @@ def build():
         "gpt_handyman_repair_inflator", source_ranges["repair-cardio"], ("east",)
     ))
     animations.append((
+        "gpt_handyman_repair_hair_restorer", source_ranges["repair-cardio"], ("east",)
+    ))
+    animations.append((
         "gpt_handyman_repair_cardio_finish", source_ranges["repair-cardio-finish"], ("east",)
     ))
 
