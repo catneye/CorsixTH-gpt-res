@@ -39,6 +39,14 @@ return function(api)
       animation_name = "gpt_handyman_repair_ultrascanner"
       marker = {60, -4, "px"}
       label = "ultrascanner"
+    elseif object_id == "slicer" and phase == 0 then
+      animation_name = "gpt_handyman_repair_slicer"
+      marker = {28, -20, "px"}
+      label = "slicer"
+    elseif object_id == "inflator" and phase == 0 then
+      animation_name = "gpt_handyman_repair_inflator"
+      marker = {59, -3, "px"}
+      label = "inflator"
     else
       return
     end
