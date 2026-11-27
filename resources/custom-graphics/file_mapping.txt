@@ -1,5 +1,7 @@
 -- CorsixTH executes this file with the custom_graphics table as its environment.
 -- Paths are relative to this directory.
+-- CorsixTH executes this file with the custom_graphics table as its environment.
+-- Paths are relative to this directory.
 file_mapping = {
-  "build/handyman-idle.cthg",
+  "build/handyman.cthg",
 }
